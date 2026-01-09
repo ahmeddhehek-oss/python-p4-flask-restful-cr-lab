@@ -2,6 +2,7 @@
 
 from app import app
 from models import db, Plant
+from decimal import Decimal
 
 with app.app_context():
 
@@ -11,14 +12,14 @@ with app.app_context():
         id=1,
         name="Aloe",
         image="./images/aloe.jpg",
-        price=11.50,
+        price=Decimal(11.50,)
     )
 
     zz_plant = Plant(
         id=2,
         name="ZZ Plant",
         image="./images/zz-plant.jpg",
-        price=25.98,
+        price=Decimal(25.98,)
     )
 
     db.session.add_all([aloe, zz_plant])
